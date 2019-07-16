@@ -1,0 +1,111 @@
+[32m[0425 13:28:50 @logger.py:90][0m Argv: ./train.py
+[32m[0425 13:28:50 @train.py:457][0m Environment Information:
+--------------------  -----------------------------------------------------------------
+sys.platform          linux
+Python                3.6.8 (default, Dec 24 2018, 19:24:27) [GCC 5.4.0 20160609]
+Tensorpack            v0.9.4-37-g5982977-dirty
+Numpy                 1.16.1
+TensorFlow            1.12.0/v1.12.0-0-ga6d8ffae09
+TF Compiler Version   4.8.5
+TF CUDA support       True
+TF MKL support        False
+Nvidia Driver         /usr/lib/x86_64-linux-gnu/libnvidia-ml.so.384.81
+CUDA                  /usr/local/cuda-9.0/targets/x86_64-linux/lib/libcudart.so.9.0.176
+CUDNN                 /usr/lib/x86_64-linux-gnu/libcudnn.so.7.4.2
+NCCL                  /usr/lib/x86_64-linux-gnu/libnccl.so.2.4.2
+CUDA_VISIBLE_DEVICES  None
+GPU 0                 Tesla M40 24GB
+Free RAM              52.70/62.53 GB
+CPU Count             24
+cv2                   4.0.1
+msgpack               0.6.1
+python-prctl          False
+--------------------  -----------------------------------------------------------------
+[32m[0425 13:28:50 @config.py:279][0m Config: ------------------------------------------
+{'BACKBONE': {'FREEZE_AFFINE': False,
+              'FREEZE_AT': 2,
+              'NORM': 'FreezeBN',
+              'RESNET_NUM_BLOCKS': [3, 4, 6, 3],
+              'STRIDE_1X1': False,
+              'TF_PAD_MODE': False,
+              'WEIGHTS': './COCO-R50C4-MaskRCNN-Standard.npz'},
+ 'CASCADE': {'BBOX_REG_WEIGHTS': [[10.0, 10.0, 5.0, 5.0], [20.0, 20.0, 10.0, 10.0],
+                                  [30.0, 30.0, 15.0, 15.0]],
+             'IOUS': [0.5, 0.6, 0.7]},
+ 'DATA': {'ABSOLUTE_COORD': True,
+          'BASEDIR': '/mnt/sdc/BigDataBench_V5.0_AI_ComponentBenchmark/DataSet/coco2014',
+          'CLASS_NAMES': ['BG', 'person', 'bicycle', 'car', 'motorcycle', 'airplane', 'bus',
+                          'train', 'truck', 'boat', 'traffic light', 'fire hydrant', 'stop sign',
+                          'parking meter', 'bench', 'bird', 'cat', 'dog', 'horse', 'sheep', 'cow',
+                          'elephant', 'bear', 'zebra', 'giraffe', 'backpack', 'umbrella', 'handbag',
+                          'tie', 'suitcase', 'frisbee', 'skis', 'snowboard', 'sports ball', 'kite',
+                          'baseball bat', 'baseball glove', 'skateboard', 'surfboard',
+                          'tennis racket', 'bottle', 'wine glass', 'cup', 'fork', 'knife', 'spoon',
+                          'bowl', 'banana', 'apple', 'sandwich', 'orange', 'broccoli', 'carrot',
+                          'hot dog', 'pizza', 'donut', 'cake', 'chair', 'couch', 'potted plant',
+                          'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse', 'remote',
+                          'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink',
+                          'refrigerator', 'book', 'clock', 'vase', 'scissors', 'teddy bear',
+                          'hair drier', 'toothbrush'],
+          'NUM_CATEGORY': 80,
+          'NUM_CLASS': 81,
+          'NUM_WORKERS': 5,
+          'TRAIN': 'train2014',
+          'VAL': ('val2014',)},
+ 'FPN': {'ANCHOR_STRIDES': (4, 8, 16, 32, 64),
+         'CASCADE': False,
+         'FRCNN_CONV_HEAD_DIM': 256,
+         'FRCNN_FC_HEAD_DIM': 1024,
+         'FRCNN_HEAD_FUNC': 'fastrcnn_2fc_head',
+         'MRCNN_HEAD_FUNC': 'maskrcnn_up4conv_head',
+         'NORM': 'None',
+         'NUM_CHANNEL': 256,
+         'PROPOSAL_MODE': 'Level',
+         'RESOLUTION_REQUIREMENT': 32},
+ 'FRCNN': {'BATCH_PER_IM': 512,
+           'BBOX_REG_WEIGHTS': [10.0, 10.0, 5.0, 5.0],
+           'FG_RATIO': 0.25,
+           'FG_THRESH': 0.5},
+ 'MODE_FPN': False,
+ 'MODE_MASK': False,
+ 'MRCNN': {'HEAD_DIM': 256},
+ 'PREPROC': {'MAX_SIZE': 1333,
+             'PIXEL_MEAN': [123.675, 116.28, 103.53],
+             'PIXEL_STD': [58.395, 57.12, 57.375],
+             'TEST_SHORT_EDGE_SIZE': 800,
+             'TRAIN_SHORT_EDGE_SIZE': [800, 800]},
+ 'RPN': {'ANCHOR_RATIOS': (0.5, 1.0, 2.0),
+         'ANCHOR_SIZES': (32, 64, 128, 256, 512),
+         'ANCHOR_STRIDE': 16,
+         'BATCH_PER_IM': 256,
+         'CROWD_OVERLAP_THRESH': 9.99,
+         'FG_RATIO': 0.5,
+         'HEAD_DIM': 1024,
+         'MIN_SIZE': 0,
+         'NEGATIVE_ANCHOR_THRESH': 0.3,
+         'NUM_ANCHOR': 15,
+         'POSITIVE_ANCHOR_THRESH': 0.7,
+         'PROPOSAL_NMS_THRESH': 0.7,
+         'TEST_PER_LEVEL_NMS_TOPK': 1000,
+         'TEST_POST_NMS_TOPK': 1000,
+         'TEST_PRE_NMS_TOPK': 6000,
+         'TRAIN_PER_LEVEL_NMS_TOPK': 2000,
+         'TRAIN_POST_NMS_TOPK': 2000,
+         'TRAIN_PRE_NMS_TOPK': 12000},
+ 'TEST': {'FRCNN_NMS_THRESH': 0.5,
+          'RESULTS_PER_IM': 100,
+          'RESULT_SCORE_THRESH': 0.05,
+          'RESULT_SCORE_THRESH_VIS': 0.5},
+ 'TRAIN': {'BASE_LR': 0.01,
+           'EVAL_PERIOD': 25,
+           'LR_SCHEDULE': [240000, 320000, 360000],
+           'NUM_GPUS': 1,
+           'STARTING_EPOCH': 1,
+           'STEPS_PER_EPOCH': 500,
+           'WARMUP': 1000,
+           'WARMUP_INIT_LR': 0.0033000000000000004,
+           'WEIGHT_DECAY': 0.0001},
+ 'TRAINER': 'replicated'}
+[32m[0425 13:28:50 @train.py:473][0m Warm Up Schedule (steps, value): [(0, 0.0033000000000000004), (1000, 0.01)]
+[32m[0425 13:28:50 @train.py:474][0m LR Schedule (epochs, value): [(2, 0.01), (3840.0, 0.001), (5120.0, 0.00010000000000000002)]
+[32m[0425 13:29:09 @dataset.py:46][0m Instances loaded from /mnt/sdc/BigDataBench_V5.0_AI_ComponentBenchmark/DataSet/coco2014/annotations/instances_train2014.json.
