@@ -1,17 +1,15 @@
-# 7. 人脸识别 FaceNet (PyTorch)
+# No. DC-AI-C7: Face embedding
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
 
-## 准备工作
+This benchmark transforms a facial image to a vector in embedding space. It uses the FaceNet algorithm and takes the LFW (Labeled Faces in the Wild) dataset or VGGFace2 as input.
 
-**Note**: 需要先运行 `TensorFlow` 版本的 `FaceNet` ，按照前述环境下载数据集并剪裁图片。
-**Warning**: PyTorch对数据集尺寸要求严格，请按照下述方法修改代码。
 
-### 图像裁剪
+## How to run
 
-`PyTorch` 对图像尺寸要求比较严格，请将 `/scripts/face-align-CASIA-Webface.sh` 中的参数  
-`--image_size 182`
-改为  
-`--image_size 224`
-重新运行剪裁图像。
+### Preprocessing
+#### Face alignment
+
+
 ```Shell
 cd ${facenet}
 ../scripts/face-align-CASIA-Webface.sh
@@ -19,11 +17,8 @@ cd ${facenet}
 ../scripts/face-align-LFW.sh
 ```
 
-## 用法
+#### Generating csv files  
 
-### 生成csv文件
-
-重写文件 `datasets/write_csv_for_making_dataset.py` ，你需要更改参数 `which_dataset` 以及文件路径 `root_dir` 。
 ```Python
 which_dataset = 1
 ```
@@ -37,20 +32,14 @@ elif which_dataset == 2:
 else:
     root_dir = "/run/media/hoosiki/WareHouse2/home/mtb/datasets/my_pictures/my_pictures_mtcnnpy_182"
 ```
-修改并运行四次文件 `datasets/write_csv_for_making_dataset.py` ，生成四个csv文件。
 ```Shell
 python datasets/write_csv_for_making_dataset.py
 ```
 
-### 训练 & 验证
+### Training
 
-运行脚本
 ```Shell
 cd ${facenet}
 ./run.sh
 ```
-
-## 参考链接
-1. [https://github.com/tbmoon/facenet](https://github.com/tbmoon/facenet)
-2. [Schroff, Florian, Dmitry Kalenichenko, and James Philbin. "Facenet: A unified embedding for face recognition and clustering." *Proceedings of the IEEE conference on computer vision and pattern recognition.*2015.](https://arxiv.org/abs/1503.03832)
 

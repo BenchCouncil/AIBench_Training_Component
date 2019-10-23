@@ -1,3 +1,7 @@
+# No. DC-AI-C4: Object detection
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
+
+This problem domain is to detect the objects within an image. 
 # Faster R-CNN / Mask R-CNN on COCO
 This example provides a minimal (2k lines) and faithful implementation of the
 following object detection / instance segmentation papers:

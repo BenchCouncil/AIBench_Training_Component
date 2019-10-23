@@ -1,6 +1,8 @@
-# 3. Text-to-Text Translation Pytorch Version
+# No. DC-AI-C3: Text-to-Text translation
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
 
-## Qucik Start:
+This problem domain need to translate text from one language to another, which is the most important field of computational linguistics
+
 You can run
 ```shell
 sh download.sh

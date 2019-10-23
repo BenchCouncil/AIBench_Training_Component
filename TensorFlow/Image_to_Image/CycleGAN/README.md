@@ -1,3 +1,8 @@
+# No. DC-AI-C5: Image-to-Image
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
+
+This problem domain is to convert an image from one representation of an image to another representation.
+
 # CycleGAN in TensorFlow
 
 The code is provided by Harry Yang (https://github.com/leehomyc/cyclegan-1).

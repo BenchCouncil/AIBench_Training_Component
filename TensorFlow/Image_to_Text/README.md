@@ -1,4 +1,8 @@
-# 4. 图像摘要生成 Image2Text
+# No. DC-AI-C4: Image-to-Text
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
+
+This problem domain is to generate the description of an image automatically.
+
 
 ## 准备工作
 ### 环境搭建

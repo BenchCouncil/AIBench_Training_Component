@@ -1,4 +1,7 @@
-# 5. 图像生成 CycleGAN
+# No. DC-AI-C5: Image-to-Image
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
+
+This problem domain is to convert an image from one representation of an image to another representation.
 
 ## 准备工作
 ### 环境搭建

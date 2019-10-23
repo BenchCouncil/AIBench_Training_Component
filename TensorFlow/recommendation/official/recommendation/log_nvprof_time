@@ -1,0 +1,171 @@
+2019-08-05 03:30:39.240682: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-08-05 03:30:42.475965: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1432] Found device 0 with properties: 
+name: TITAN Xp major: 6 minor: 1 memoryClockRate(GHz): 1.582
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.74GiB
+2019-08-05 03:30:42.476023: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-08-05 03:30:43.237314: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-08-05 03:30:43.237362: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-08-05 03:30:43.237370: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-08-05 03:30:43.237712: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/device:GPU:0 with 11347 MB memory) -> physical GPU (device: 0, name: TITAN Xp, pci bus id: 0000:02:00.0, compute capability: 6.1)
+I0805 03:30:43.242649 140502276736832 tf_logging.py:115] Dataset ml-1m has already been downloaded
+I0805 03:30:43.242898 140502276736832 tf_logging.py:115] Beginning data preprocessing.
+I0805 03:30:43.243135 140502276736832 tf_logging.py:115] Creating cache directory. This should be deleted on exit.
+I0805 03:30:44.652538 140502276736832 tf_logging.py:115] Generating user_map and item_map...
+I0805 03:30:46.043907 140502276736832 tf_logging.py:115] Sorting by user, timestamp...
+I0805 03:30:46.456338 140502276736832 tf_logging.py:115] Splitting train and test data and generating 999 test negatives per user...
+I0805 03:30:48.048404 140502276736832 tf_logging.py:115] Merging test shards...
+I0805 03:30:48.202108 140502276736832 tf_logging.py:115] Writing test data to file.
+I0805 03:30:48.363220 140502276736832 tf_logging.py:115] Cache construction complete. Time: 5.1 sec.
+I0805 03:30:48.366916 140502276736832 tf_logging.py:115] Creating training file subprocess.
+I0805 03:30:48.367329 140502276736832 tf_logging.py:115] Generation subprocess command: /home/gwl/anaconda2/envs/py36ten12/bin/python /home/gwl/tensorflow/tran_base/recommendation/official/recommendation/data_async_generation.py --data_dir /home/gwl/tensorflow/dataset/recommendation/movielens-data/ --cache_id 1564947043 --num_neg 4 --num_train_positives 994169 --num_items 3706 --num_readers 20 --epochs_per_cycle 1 --train_batch_size 256 --eval_batch_size 256 --num_workers 30 --spillover True --redirect_logs True --seed 1572265700
+Redirecting output of data_async_generation.py process to /home/gwl/tensorflow/dataset/recommendation/movielens-data/data_gen_proc_1564947043.log
+I0805 03:30:51.493951 140502276736832 tf_logging.py:115] Initializing RunConfig with distribution strategies.
+I0805 03:30:51.494222 140502276736832 tf_logging.py:115] Not using Distribute Coordinator.
+I0805 03:30:51.494738 140502276736832 tf_logging.py:115] Using config: {'_model_dir': '/tmp/ncf/', '_tf_random_seed': None, '_save_summary_steps': 100, '_save_checkpoints_steps': None, '_save_checkpoints_secs': 600, '_session_config': allow_soft_placement: true
+graph_options {
+  rewrite_options {
+    meta_optimizer_iterations: ONE
+  }
+}
+, '_keep_checkpoint_max': 5, '_keep_checkpoint_every_n_hours': 10000, '_log_step_count_steps': 100, '_train_distribute': <tensorflow.contrib.distribute.python.one_device_strategy.OneDeviceStrategy object at 0x7fc8696f9898>, '_device_fn': None, '_protocol': None, '_eval_distribute': None, '_experimental_distribute': None, '_service': None, '_cluster_spec': <tensorflow.python.training.server_lib.ClusterSpec object at 0x7fc8696f9908>, '_task_type': 'worker', '_task_id': 0, '_global_id_in_cluster': 0, '_master': '', '_evaluation_master': '', '_is_chief': True, '_num_ps_replicas': 0, '_num_worker_replicas': 1, '_distribute_coordinator_mode': None}
+W0805 03:30:51.497942 140502276736832 tf_logging.py:120] 'cpuinfo' not imported. CPU info will not be logged.
+2019-08-05 03:30:51.498303: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-08-05 03:30:51.498360: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-08-05 03:30:51.498370: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-08-05 03:30:51.498376: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-08-05 03:30:51.498844: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/device:GPU:0 with 11347 MB memory) -> physical GPU (device: 0, name: TITAN Xp, pci bus id: 0000:02:00.0, compute capability: 6.1)
+I0805 03:30:51.611355 140502276736832 tf_logging.py:115] Benchmark run: {'model_name': 'recommendation', 'dataset': {'name': 'ml-1m'}, 'machine_config': {'gpu_info': {'count': 1, 'model': 'TITAN Xp'}, 'memory_total': 270181031936, 'memory_available': 263468126208}, 'test_id': None, 'run_date': '2019-08-04T19:30:51.496846Z', 'tensorflow_version': {'version': '1.12.0', 'git_hash': 'v1.12.0-0-ga6d8ffae09'}, 'tensorflow_environment_variables': [], 'run_parameters': [{'name': 'batch_size', 'long_value': 256}, {'name': 'eval_batch_size', 'long_value': 256}, {'name': 'hr_threshold', 'string_value': 'None'}, {'name': 'number_factors', 'long_value': 8}, {'name': 'train_epochs', 'long_value': 1}]}
+I0805 03:30:51.615226 140502276736832 tf_logging.py:115] Starting a training cycle: 1/1
+I0805 03:30:51.616119 140502276736832 tf_logging.py:115] Waiting for records in /home/gwl/tensorflow/dataset/recommendation/movielens-data/1564947043_ncf_recommendation_cache/training_epochs/cycle_00000 to be ready
+W0805 03:30:52.653715 140502276736832 tf_logging.py:125] From /home/gwl/tensorflow/tran_base/recommendation/official/recommendation/data_preprocessing.py:550: parallel_interleave (from tensorflow.contrib.data.python.ops.interleave_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use `tf.data.experimental.parallel_interleave(...)`.
+I0805 03:30:52.723246 140502276736832 tf_logging.py:115] Calling model_fn.
+__________________________________________________________________________________________________
+Layer (type)                    Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)            (256,)               0                                            
+__________________________________________________________________________________________________
+input_2 (InputLayer)            (256,)               0                                            
+__________________________________________________________________________________________________
+embedding_2 (Embedding)         (256, 32)            193280      input_1[0][0]                    
+__________________________________________________________________________________________________
+embedding_3 (Embedding)         (256, 32)            118592      input_2[0][0]                    
+__________________________________________________________________________________________________
+concatenate (Concatenate)       (256, 64)            0           embedding_2[0][0]                
+                                                                 embedding_3[0][0]                
+__________________________________________________________________________________________________
+dense (Dense)                   (256, 32)            2080        concatenate[0][0]                
+__________________________________________________________________________________________________
+embedding (Embedding)           (256, 8)             48320       input_1[0][0]                    
+__________________________________________________________________________________________________
+embedding_1 (Embedding)         (256, 8)             29648       input_2[0][0]                    
+__________________________________________________________________________________________________
+dense_1 (Dense)                 (256, 16)            528         dense[0][0]                      
+__________________________________________________________________________________________________
+multiply (Multiply)             (256, 8)             0           embedding[0][0]                  
+                                                                 embedding_1[0][0]                
+__________________________________________________________________________________________________
+dense_2 (Dense)                 (256, 8)             136         dense_1[0][0]                    
+__________________________________________________________________________________________________
+concatenate_1 (Concatenate)     (256, 16)            0           multiply[0][0]                   
+                                                                 dense_2[0][0]                    
+__________________________________________________________________________________________________
+rating (Dense)                  (256, 1)             17          concatenate_1[0][0]              
+==================================================================================================
+Total params: 392,601
+Trainable params: 392,601
+Non-trainable params: 0
+__________________________________________________________________________________________________
+I0805 03:30:53.503199 140502276736832 tf_logging.py:115] Done calling model_fn.
+I0805 03:30:53.548008 140502276736832 tf_logging.py:115] Create CheckpointSaverHook.
+I0805 03:30:53.658868 140502276736832 tf_logging.py:115] Graph was finalized.
+2019-08-05 03:30:53.660108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1511] Adding visible gpu devices: 0
+2019-08-05 03:30:53.660203: I tensorflow/core/common_runtime/gpu/gpu_device.cc:982] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-08-05 03:30:53.660220: I tensorflow/core/common_runtime/gpu/gpu_device.cc:988]      0 
+2019-08-05 03:30:53.660232: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1001] 0:   N 
+2019-08-05 03:30:53.660655: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11347 MB memory) -> physical GPU (device: 0, name: TITAN Xp, pci bus id: 0000:02:00.0, compute capability: 6.1)
+I0805 03:30:53.916798 140502276736832 tf_logging.py:115] Running local_init_op.
+I0805 03:30:53.925081 140502276736832 tf_logging.py:115] Done running local_init_op.
+I0805 03:30:54.331773 140502276736832 tf_logging.py:115] Saving checkpoints for 0 into /tmp/ncf/model.ckpt.
+I0805 03:30:56.090086 140502276736832 tf_logging.py:115] loss = 0.46746275, step = 0
+I0805 03:30:56.808321 140502276736832 tf_logging.py:115] global_step/sec: 138.648
+I0805 03:30:56.809416 140502276736832 tf_logging.py:115] loss = 0.4729754, step = 100 (0.720 sec)
+I0805 03:30:57.362340 140502276736832 tf_logging.py:115] global_step/sec: 180.482
+I0805 03:30:57.363265 140502276736832 tf_logging.py:115] loss = 0.3744362, step = 200 (0.554 sec)
+I0805 03:30:57.950576 140502276736832 tf_logging.py:115] global_step/sec: 170
+I0805 03:30:57.951626 140502276736832 tf_logging.py:115] loss = 0.38443294, step = 300 (0.588 sec)
+I0805 03:30:58.591866 140502276736832 tf_logging.py:115] global_step/sec: 155.932
+I0805 03:30:58.592783 140502276736832 tf_logging.py:115] loss = 0.43151367, step = 400 (0.641 sec)
+I0805 03:30:59.158937 140502276736832 tf_logging.py:115] global_step/sec: 176.339
+I0805 03:30:59.159793 140502276736832 tf_logging.py:115] loss = 0.3083488, step = 500 (0.567 sec)
+I0805 03:30:59.750112 140502276736832 tf_logging.py:115] global_step/sec: 169.16
+I0805 03:30:59.751190 140502276736832 tf_logging.py:115] loss = 0.36270598, step = 600 (0.591 sec)
+I0805 03:31:00.404423 140502276736832 tf_logging.py:115] global_step/sec: 152.835
+I0805 03:31:00.405483 140502276736832 tf_logging.py:115] loss = 0.3539667, step = 700 (0.654 sec)
+I0805 03:31:01.066879 140502276736832 tf_logging.py:115] global_step/sec: 150.954
+I0805 03:31:01.067972 140502276736832 tf_logging.py:115] loss = 0.36863497, step = 800 (0.662 sec)
+I0805 03:31:01.733539 140502276736832 tf_logging.py:115] global_step/sec: 150.002
+I0805 03:31:01.734535 140502276736832 tf_logging.py:115] loss = 0.40516204, step = 900 (0.667 sec)
+2019-08-05 03:31:02.371595: I tensorflow/stream_executor/dso_loader.cc:151] successfully opened CUDA library libcupti.so.9.0 locally
+2019-08-05 03:31:02.472027: E tensorflow/core/platform/default/device_tracer.cc:135] cuda call ActivityRegisterCallbacks(BufferRequested, BufferCompleted) failed 15
+Traceback (most recent call last):
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1334, in _do_call
+    return fn(*args)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1319, in _run_fn
+    options, feed_dict, fetch_list, target_list, run_metadata)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1407, in _call_tf_sessionrun
+    run_metadata)
+tensorflow.python.framework.errors_impl.InternalError: Failed to create CUPTI subcriber.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "ncf_main.py", line 507, in <module>
+    absl_app.run(main)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/absl/app.py", line 300, in run
+    _run_main(main, args)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/absl/app.py", line 251, in _run_main
+    sys.exit(main(argv))
+  File "ncf_main.py", line 292, in main
+    run_ncf(FLAGS)
+  File "ncf_main.py", line 371, in run_ncf
+    steps=batch_count)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/estimator/estimator.py", line 354, in train
+    loss = self._train_model(input_fn, hooks, saving_listeners)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/estimator/estimator.py", line 1205, in _train_model
+    return self._train_model_distributed(input_fn, hooks, saving_listeners)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/estimator/estimator.py", line 1352, in _train_model_distributed
+    saving_listeners)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/estimator/estimator.py", line 1471, in _train_with_estimator_spec
+    _, loss = mon_sess.run([estimator_spec.train_op, estimator_spec.loss])
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/training/monitored_session.py", line 671, in run
+    run_metadata=run_metadata)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/training/monitored_session.py", line 1156, in run
+    run_metadata=run_metadata)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/training/monitored_session.py", line 1255, in run
+    raise six.reraise(*original_exc_info)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/six.py", line 693, in reraise
+    raise value
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/training/monitored_session.py", line 1240, in run
+    return self._sess.run(*args, **kwargs)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/training/monitored_session.py", line 1312, in run
+    run_metadata=run_metadata)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/training/monitored_session.py", line 1076, in run
+    return self._sess.run(*args, **kwargs)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 929, in run
+    run_metadata_ptr)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1152, in _run
+    feed_dict_tensor, options, run_metadata)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1328, in _do_run
+    run_metadata)
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/client/session.py", line 1348, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InternalError: Failed to create CUPTI subcriber.
+I0805 03:31:02.583870 140502276736832 tf_logging.py:115] Shutting down train data creation subprocess.
+Error in atexit._run_exitfuncs:
+Traceback (most recent call last):
+  File "/home/gwl/anaconda2/envs/py36ten12/lib/python3.6/site-packages/tensorflow/python/framework/errors_impl.py", line 528, in __exit__
+    c_api.TF_GetCode(self.status.status))
+tensorflow.python.framework.errors_impl.NotFoundError: /home/gwl/tensorflow/dataset/recommendation/movielens-data/1564947043_ncf_recommendation_cache/subproc.alive; No such file or directory

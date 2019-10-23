@@ -1,4 +1,9 @@
 
+# No. DC-AI-C1: Image classification
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
+
+This problem domain is to extract different thematic classes within the input data like an image or a text file, which is a supervised learning problem to define a set of target classes and train a model to recognize.
+
 # ResNet for Image Classification
 
 This ResNet-TensorFlow implementation is from tensorflow official models, see https://github.com/tensorflow/models/tree/master/official 

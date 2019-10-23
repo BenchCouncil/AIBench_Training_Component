@@ -1,4 +1,8 @@
-# GANs comparison without cherry-picking
+# No. DC-AI-C2: Image generation
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
+
+This problem domain aims to provide an unsupervised learning problem to mimic the distribution of data and generate images.
+
 
 Implementations of some theoretical generative adversarial nets: DCGAN, EBGAN, LSGAN, WGAN, WGAN-GP, BEGAN, DRAGAN and CoulombGAN. 
 

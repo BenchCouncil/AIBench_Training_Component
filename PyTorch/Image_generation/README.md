@@ -1,4 +1,7 @@
-# 2. 图像生成 WGAN (PyTorch)
+# No. DC-AI-C2: Image generation
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
+
+This problem domain aims to provide an unsupervised learning problem to mimic the distribution of data and generate images.
 
 ## 准备工作
 

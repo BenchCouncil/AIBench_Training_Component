@@ -1,4 +1,7 @@
-# 7. 人脸识别 FaceNet (Tensorflow)
+# No. DC-AI-C7: Face embedding
+This is one of the component benchmarks of AIBench, an Industry Standard AI Benchmark Suite for datacenter AI benchmarking.
+
+This benchmark transforms a facial image to a vector in embedding space. It uses the FaceNet algorithm and takes the LFW (Labeled Faces in the Wild) dataset or VGGFace2 as input.
 
 ## 准备工作
 
