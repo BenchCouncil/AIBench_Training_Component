@@ -60,18 +60,6 @@ A PyTorch implementation of Ranking Distillation:
 - <code>dynamic_samples</code>: number of samples used for estimating student's rank.
 - <code>dynamic_start_epoch</code>: number of iteration to start using hybrid of two different weights.
 
-# Citation
-
-If you use this Caser in your paper, please cite the paper:
-
-```
-@inproceedings{tang2018ranking,
-  title={Ranking Distillation: Learning Compact Ranking Models With High Performance for Recommender System},
-  author={Tang, Jiaxi and Wang, Ke},
-  booktitle={ACM SIGKDD International Conference on Knowledge Discovery & Data Mining},
-  year={2018}
-}
-```
 
 # Acknowledgment
 
