@@ -1,0 +1,7 @@
+sm_efficiency,ipc
+global_hit_rate,local_hit_rate,tex_cache_hit_rate
+l2_tex_read_hit_rate,l2_tex_write_hit_rate
+stall_inst_fetch,stall_exec_dependency,stall_memory_dependency
+stall_texture,stall_sync
+warp_execution_efficiency,stall_pipe_busy,stall_constant_memory_dependency
+stall_memory_throttle

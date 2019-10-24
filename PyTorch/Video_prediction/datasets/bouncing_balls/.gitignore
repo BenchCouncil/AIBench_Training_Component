@@ -1,0 +1,39 @@
+# lua
+results*
+demo_results*
+scratch*
+opmjlogs*
+logs
+oplogs
+hey*
+*.sh
+*.h5
+*.hdf5
+*.pyc
+*.svg
+*.dot
+*.png
+*.txt
+
+# js
+node_modules/
+package.json
+demo/css/
+demo/img/
+demo/js/DemoMobile.js
+demo/js/lib/
+demo/mobile.html
+demo/svg/
+demo/js/require2.js
+demo/js/manual_control.js
+
+# these are scratch work
+hi.json
+out.json
+velocity_debug.js
+minimal.js
+*.json
+saved/
+matter-dev-github.js
+*.png
+data/

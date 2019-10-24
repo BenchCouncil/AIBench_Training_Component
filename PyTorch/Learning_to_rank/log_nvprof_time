@@ -1,0 +1,5 @@
+Namespace(L=5, batch_size=512, checkpoint='', l2=1e-06, learning_rate=0.001, n_iter=1, neg_samples=3, seed=1234, test_root='datasets/gowalla/test/test.txt', train_root='datasets/gowalla/test/train.txt', use_cuda=True)
+Namespace(L=5, ac_conv='iden', ac_fc='sigm', d=100, drop=0.5, nh=16, nv=2)
+total training instances: 367611
+Number of params: 5583500
+Epoch 1 [41.9 s]	loss=1.9786 [0.0 s]
