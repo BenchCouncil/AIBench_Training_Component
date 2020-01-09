@@ -157,52 +157,6 @@ def main(_):
       saver = tf.train.Saver(max_to_keep=np.minimum(5,
                                                     FLAGS.worker_replicas + 1))
 
-      if FLAGS.task == 0:
-        params = FLAGS
-        params.batch_size = params.num_views
-        params.step_size = 1
-        model.set_params(params)
-        val_data = model.get_inputs(
-            params.inp_dir,
-            params.dataset_name,
-            'val',
-            params.batch_size,
-            params.image_size,
-            params.vox_size,
-            is_training=False)
-        val_inputs = model.preprocess(val_data, params.step_size)
-        # Note: don't compute loss here
-        reused_model_fn = model.get_model_fn(is_training=False, reuse=True)
-        val_outputs = reused_model_fn(val_inputs)
-
-        with tf.device(tf.DeviceSpec(device_type='CPU')):
-          vis_input_images = val_inputs['images_1'] * 255.0
-          vis_gt_projs = (val_outputs['masks_1'] * (-1) + 1) * 255.0
-          vis_pred_projs = (val_outputs['projs_1'] * (-1) + 1) * 255.0
-
-          vis_gt_projs = tf.concat([vis_gt_projs] * 3, axis=3)
-          vis_pred_projs = tf.concat([vis_pred_projs] * 3, axis=3)
-          # rescale
-          new_size = [FLAGS.image_size] * 2
-          vis_gt_projs = tf.image.resize_nearest_neighbor(
-              vis_gt_projs, new_size)
-          vis_pred_projs = tf.image.resize_nearest_neighbor(
-              vis_pred_projs, new_size)
-          # flip
-          # vis_gt_projs = utils.image_flipud(vis_gt_projs)
-          # vis_pred_projs = utils.image_flipud(vis_pred_projs)
-          # vis_gt_projs is of shape [batch, height, width, channels]
-          write_disk_op = model.write_disk_grid(
-              global_step=global_step,
-              log_dir=save_image_dir,
-              input_images=vis_input_images,
-              gt_projs=vis_gt_projs,
-              pred_projs=vis_pred_projs,
-              input_voxels=val_inputs['voxels'],
-              output_voxels=val_outputs['voxels_1'])
-        with tf.control_dependencies([write_disk_op]):
-          train_op = tf.identity(train_op)
-
       #############
       ## init_fn ##
       #############
@@ -214,6 +168,8 @@ def main(_):
       ##############
       ## training ##
       ##############
+      import time
+      time_start=time.time()
       slim.learning.train(
           train_op=train_op,
           logdir=train_dir,
@@ -224,6 +180,7 @@ def main(_):
           saver=saver,
           save_summaries_secs=FLAGS.save_summaries_secs,
           save_interval_secs=FLAGS.save_interval_secs)
+      print("train_time=",time.time()-time_start)
 
 
 if __name__ == '__main__':
